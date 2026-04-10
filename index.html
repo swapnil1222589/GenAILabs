@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen AI Mega Workshop - Project Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-[#030712]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <a href="#home" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">GenAI<span class="text-blue-400">Labs</span></span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#problem" class="nav-link">The Problem</a>
+                    <a href="#solution" class="nav-link">Our Idea</a>
+                    <a href="#market" class="nav-link">Market</a>
+                    <a href="#pitch" class="nav-link">The Pitch</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <button onclick="handleProjectView()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold glow-button">
+                        View Project
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#030712] border-b border-white/10 px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Home</a>
+            <a href="#problem" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">The Problem</a>
+            <a href="#solution" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Our Idea</a>
+            <a href="#market" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Market</a>
+            <a href="#pitch" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">The Pitch</a>
+            <button onclick="handleProjectView()" class="w-full mt-4 bg-blue-600 text-white px-5 py-3 rounded-xl text-sm font-semibold glow-button">
+                View Project
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[10%] right-[-10%] w-[30%] h-[30%] bg-purple-600/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
+                Workshop 2.0 • Innovation Agent
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Reimagining the Future with <span class="gradient-text">Generative Intelligence</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Discover our innovative solution born from the Workshop 2.0. We're solving real-world challenges using the RACEF framework and customer-driven development.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#solution" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all text-center">
+                    Explore Solution
+                </a>
+                <a href="#pitch" class="bg-white/5 border border-white/10 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    <i class="fas fa-play text-xs"></i> Watch Pitch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section id="problem" class="py-20 px-4 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">The Opportunity Statement</h2>
+                    <div class="p-6 bg-blue-600/5 border-l-4 border-blue-500 rounded-r-xl italic text-gray-300 text-lg mb-8">
+                        "How Might We leverage Generative AI to bridge the gap between abstract concepts and tangible user experiences for non-technical founders?"
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        During our user research, we identified that many aspiring entrepreneurs struggle to articulate their vision. We used the <strong>HMW framework</strong> to reframe this insight into a massive opportunity area.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-[10px] text-red-500"></i>
+                            </div>
+                            <span class="text-gray-300">High barriers to technical prototyping</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-[10px] text-red-500"></i>
+                            </div>
+                            <span class="text-gray-300">Disconnected branding and product narrative</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 flex flex-col justify-center items-center text-center mt-8">
+                        <i class="fas fa-users text-3xl text-blue-400 mb-4"></i>
+                        <h3 class="font-bold">User Persona</h3>
+                        <p class="text-xs text-gray-500 mt-2 text-balance">The "Solopreneur Sarah" profiling</p>
+                    </div>
+                    <div class="glass-card p-6 flex flex-col justify-center items-center text-center">
+                        <i class="fas fa-chart-line text-3xl text-purple-400 mb-4"></i>
+                        <h3 class="font-bold">Market Gap</h3>
+                        <p class="text-xs text-gray-500 mt-2">Identifying the hidden SOM</p>
+                    </div>
+                    <div class="glass-card p-6 flex flex-col justify-center items-center text-center">
+                        <i class="fas fa-search text-3xl text-pink-400 mb-4"></i>
+                        <h3 class="font-bold">Research</h3>
+                        <p class="text-xs text-gray-500 mt-2">Data-driven validation</p>
+                    </div>
+                    <div class="glass-card p-6 flex flex-col justify-center items-center text-center mt-[-32px]">
+                        <i class="fas fa-bolt text-3xl text-yellow-400 mb-4"></i>
+                        <h3 class="font-bold">Pain Points</h3>
+                        <p class="text-xs text-gray-500 mt-2">Solving real friction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution / MVP -->
+    <section id="solution" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Introducing <span class="text-blue-400">NovaSync</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Our Minimum Viable Product (MVP) that translates thoughts into functional digital blueprints using the power of Multi-Agent AI.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="glass-card p-8 group">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                    <i class="fas fa-wand-magic-sparkles text-blue-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">RACEF Engine</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    A prompt engineering core that automatically structures user requests into Role, Action, Context, Example, and Format for maximum accuracy.
+                </p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="glass-card p-8 border-t-2 border-blue-500/50 group">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                    <i class="fas fa-layer-group text-purple-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Story-to-Code</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Uses the Pixar Pitch framework to generate user stories and then maps those stories directly to front-end components.
+                </p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="glass-card p-8 group">
+                <div class="w-12 h-12 bg-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
+                    <i class="fas fa-vial text-pink-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">CDD Validation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Integrated Customer-Driven Development tools that simulate user interviews to validate assumptions before a single line of code is written.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity Section -->
+    <section id="market" class="py-20 px-4 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-balance">The Revenue Opportunity</h2>
+                <p class="text-gray-400">Quantifying the potential of our innovation.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="p-6 glass-card border-l-4 border-blue-500">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-lg">TAM</span>
+                            <span class="text-blue-400 font-mono">₹450 Cr</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Total global SaaS ideation market potential.</p>
+                    </div>
+                    <div class="p-6 glass-card border-l-4 border-purple-500">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-lg">SAM</span>
+                            <span class="text-purple-400 font-mono">₹85 Cr</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Early-stage startups in the APAC region.</p>
+                    </div>
+                    <div class="p-6 glass-card border-l-4 border-pink-500">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-lg">SOM</span>
+                            <span class="text-pink-400 font-mono">₹12 Cr</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Obtainable through first-year organic acquisition.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center">
+                    <div class="w-64 h-64 rounded-full border-2 border-blue-500/30 flex items-center justify-center relative">
+                        <span class="absolute top-2 text-[10px] font-bold text-blue-500/50">TAM</span>
+                        <div class="w-48 h-48 rounded-full border-2 border-purple-500/40 flex items-center justify-center relative">
+                             <span class="absolute top-2 text-[10px] font-bold text-purple-500/50">SAM</span>
+                            <div class="w-32 h-32 rounded-full border-2 border-pink-500/60 bg-pink-500/10 flex items-center justify-center">
+                                 <span class="text-[10px] font-bold text-pink-500">SOM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pitch Section -->
+    <section id="pitch" class="py-20 px-4">
+        <div class="max-w-5xl mx-auto glass-card overflow-hidden">
+            <div class="grid md:grid-cols-5">
+                <div class="md:col-span-2 bg-gradient-to-br from-blue-600 to-purple-700 p-10 flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold mb-4">The Pitch</h2>
+                    <p class="text-blue-100 mb-8 leading-relaxed">
+                        Watch our 60-second elevator pitch and see how we're winning the "Shark Tank" of the workshop.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Problem-Hook Opening</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Value Prop Explained</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clear Call to Action</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 p-1 w-full aspect-video bg-black flex items-center justify-center relative group overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/40 transition-all duration-500"></div>
+                    <div class="text-center z-10">
+                        <div onclick="openVideoModal()" class="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mx-auto mb-4 hover:scale-110 hover:bg-white/20 cursor-pointer transition-all duration-300">
+                            <i class="fas fa-play text-2xl text-white ml-1"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm font-medium">Click to Play Pitch Presentation</p>
+                        <p class="text-gray-500 text-[10px] mt-2 italic">(Simulated Video Player)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal (Hidden by default) -->
+    <div id="video-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 modal-overlay" onclick="closeVideoModal()"></div>
+        <div class="relative w-full max-w-4xl glass-card border-white/20 overflow-hidden aspect-video bg-black flex items-center justify-center shadow-2xl">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 text-white hover:text-red-400 z-50 p-2">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="text-center p-8">
+                <i class="fas fa-film text-5xl text-blue-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Pitch Video Integration</h3>
+                <p class="text-gray-400 mb-8 max-w-md mx-auto">
+                    Replace this modal with your actual Google Drive embed link or YouTube video when submitting.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <button onclick="closeVideoModal()" class="bg-blue-600 px-6 py-2 rounded-lg font-bold">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-white/10 mt-20 text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-center space-x-2 mb-6">
+                <div class="w-6 h-6 bg-gradient-to-tr from-blue-500 to-purple-600 rounded flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-[10px]"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight">GenAI<span class="text-blue-400">Labs</span></span>
+            </div>
+            <p class="text-gray-500 text-sm mb-8">
+                Created for the Generative AI Mega Workshop 2.0 Project Submission.
+            </p>
+            <div class="flex justify-center space-x-8 text-gray-400 mb-10">
+                <a href="https://www.linkedin.com/in/swapnil-ghuge-1355752a5/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-all transform hover:scale-125"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="https://x.com/swapnil_ghuge_" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-all transform hover:scale-125"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://github.com/swapnil1222589" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-all transform hover:scale-125"><i class="fab fa-github text-2xl"></i></a>
+            </div>
+            <div class="text-[10px] uppercase tracking-widest text-gray-600 font-bold">
+                Project Deadline: 15th Sept 202X
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Messaging -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-[100] space-y-2 pointer-events-none"></div>
+</body>
+</html>
