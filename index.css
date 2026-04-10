@@ -1,5 +1,5 @@
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #030712;
@@ -18,74 +18,88 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 30px -10px rgba(96, 165, 250, 0.2);
-        }
-
-        .nav-link {
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #60a5fa;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.3);
         }
 
         .glow-button {
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
         .glow-button:hover {
-            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
-            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+            transform: translateY(-2px);
         }
 
-        .glow-button:active {
-            transform: scale(0.98);
+        .pricing-card-featured {
+            border: 2px solid #3b82f6;
+            position: relative;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .pricing-card-featured::after {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3b82f6;
+            color: white;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
         }
-        ::-webkit-scrollbar-track {
-            background: #030712;
+
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #374151;
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         #mobile-menu {
-            transition: transform 0.3s ease-in-out;
+            transition: all 0.3s ease;
         }
 
-        .modal-overlay {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
+        /* Roadmap Animations */
+        .roadmap-step {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Code Block Styling */
+        .code-preview {
+            background: #010409;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            overflow-x: auto;
         }
